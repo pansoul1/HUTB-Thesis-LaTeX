@@ -1,0 +1,112 @@
+\chapter{相关技术介绍}
+
+% ===== 提示 =====
+% 本章介绍论文涉及的核心技术和理论基础。
+% 根据你的课题调整章节名称和内容。
+% ================
+
+\section{技术一介绍}
+
+在此介绍你所使用的第一项核心技术，包括其基本原理、发展历程和主要特点。
+
+\subsection{基本原理}
+
+技术的核心原理描述。如需插入公式，示例如下：
+
+\begin{equation}
+    E = mc^2
+    \label{eq:example}
+\end{equation}
+
+如公式(\ref{eq:example})所示，这是一个示例公式。公式采用全文顺序编号。
+
+\subsection{技术特点}
+
+对该技术的主要特点和优势进行说明。
+
+\section{技术二介绍}
+
+在此介绍你所使用的第二项核心技术。
+
+% ===================================================================
+% ★ 插入图片完整指南（以下为示例，请替换为你自己的图片）
+% ===================================================================
+%
+% 【步骤】
+%   1. 将图片文件放入 images/ 目录下（支持 png、jpg、pdf 格式）
+%   2. 在正文中先用文字提及该图，再插入图片
+%   3. 使用 \caption{} 设置标题（会自动出现在"插图索引"中）
+%   4. 使用 \label{} 设置标签，便于用 \ref{} 在其他位置引用
+%
+% 【注意事项】
+%   - 图片编号为全文顺序编号（图1、图2、图3……）
+%   - 图片标题在图的正下方，五号宋体加粗（模板已自动设置）
+%   - 图及图标题与正文之间上、下各空一行
+%   - 引用图片时写"如图\ref{fig:xxx}所示"
+% ===================================================================
+
+\section{图片插入示例}
+
+% ---------- 示例1：插入单张图片 ----------
+% 将你的图片放到 images/ 目录下，修改文件名即可
+
+系统的整体架构如图\ref{fig:demo_single}所示。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/fm.png}
+    \caption{单张图片示例——请替换为你的图片}
+    \label{fig:demo_single}
+\end{figure}
+
+% 参数说明：
+%   [htbp]  — 浮动位置：h(当前位置) t(页面顶部) b(页面底部) p(独立页)
+%   width=0.6\textwidth — 图片宽度为页面文字宽度的60%，可调整数值
+%   也可以用 height=6cm 等指定高度
+
+% ---------- 示例2：两张图片并排 ----------
+% 使用 subfigure 宏包实现（已在 main.tex 中引入）
+
+图\ref{fig:demo_side}展示了两张并排放置的图片。
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[左图标题]{
+        \includegraphics[width=0.45\textwidth]{images/fm.png}
+        \label{fig:demo_left}
+    }
+    \subfigure[右图标题]{
+        \includegraphics[width=0.45\textwidth]{images/fm.png}
+        \label{fig:demo_right}
+    }
+    \caption{并排图片示例——请替换为你的图片}
+    \label{fig:demo_side}
+\end{figure}
+
+% 引用子图写法：如图\ref{fig:demo_left}所示
+% 引用总图写法：如图\ref{fig:demo_side}所示
+% 注意两张子图宽度之和不要超过 \textwidth（建议各0.45）
+
+\section{开发环境与工具}
+
+本系统的开发环境及工具如表\ref{tab:dev_env}所示。
+
+% ---------- 表格示例（三线表）----------
+% 表格标题在表的正上方，五号宋体加粗（模板已自动设置）
+% 表格编号为全文顺序编号（表1、表2、表3……）
+
+\begin{table}[htbp]
+    \centering
+    \caption{开发环境与工具}
+    \label{tab:dev_env}
+    \begin{tabular}{lll}
+        \toprule
+        类别 & 名称 & 版本 \\
+        \midrule
+        操作系统 & Windows 11 & 23H2 \\
+        编程语言 & Python & 3.10 \\
+        数据库 & MySQL & 8.0 \\
+        开发工具 & VS Code & Latest \\
+        \bottomrule
+    \end{tabular}
+\end{table}

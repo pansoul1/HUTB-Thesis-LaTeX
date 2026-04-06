@@ -1,0 +1,26 @@
+\appendix{示例附录标题}
+
+% ===== 提示 =====
+% 附录主要放置：
+% - 过长的公式推导
+% - 辅助性数学工具或表格
+% - 重复性数据图表
+% - 程序代码
+% - 问卷调查等
+% 附录的篇幅不宜太长，一般不要超过正文。
+% ================
+
+在此放置附录内容。例如核心代码、建表SQL脚本、问卷等。
+
+\begin{verbatim}
+-- 示例SQL
+CREATE TABLE example (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+\end{verbatim}
+
+% 如果有多个附录，可以再次调用 \appendix{附录标题}
+% \appendix{第二个附录标题}
+% 第二个附录的内容……

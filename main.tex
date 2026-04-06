@@ -1,0 +1,93 @@
+\documentclass{csuthesis}
+
+% 设置并排放置多图
+\usepackage{subfigure}
+\usepackage{multirow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ① 论文类型选择（二选一，取消注释你需要的那一行）
+% -----------------------------------------------%
+\thesistype{毕业设计}       % ← 毕业设计（默认）
+% \thesistype{毕业论文}     % ← 毕业论文
+% 说明：该选项会影响扎页大标题和正文页眉的显示文字。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ② 个人信息（请逐项修改为你的真实信息）
+% -----------------------------------------------%
+\studentid{20210101001} % 学号
+\clcnumber{} 				% 中图分类号 Chinese Library Classification
+\schoolcode{10554}			% 学校代码
+\secret{绝密}
+
+\titlecn{你的毕业论文（设计）中文题目}% 论文标题
+\titleen{English Title of Your Thesis} %论文英文标题
+\author{你的姓名}% 作者姓名
+\priormajor{你的专业} % 学科专业
+\supervisor{指导教师姓名}% 指导教师
+\supervisortitle{教授}% 职称
+\department{你的学院} % 学院
+\classname{专业班级2101} % 专业班级
+\defensedate{2025年6月} % 答辩日期
+
+%\academiccategory{学术学位}	 % 学术类别
+% \academiccategorytrue      % 学术学位，如果是，注释下面一行
+\academiccategoryfalse    % 专业学位，如果是，注释上面一行
+%\blindreviewtrue
+\blindreviewfalse
+
+% 添加参考文献
+% 所有cite格式引用数据放在references.bib文件中
+\addbibresource{references.bib}
+
+\begin{document}
+    \frontfrontmatter
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 封面
+	% -----------------------------------------------%
+% 	\makecoverpage
+	
+	\ifblindreview	% 盲审不需要扉页和声明页
+	\else
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 扉页 
+	% -----------------------------------------------%
+	\maketitlepage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 声明页
+	% -----------------------------------------------%
+	\announcement
+	\fi
+
+    \clearpage
+    \frontmatter
+    \input{chapter/abstract.tex}
+    % 目录部分：独立罗马数字页码，不与摘要连续排序
+    \pagestyle{tocstyle}
+    \pagenumbering{Roman}
+    \tableofcontents
+    % 插图索引：自动列出所有图片的编号、标题和页码
+    \listoffigures
+    % 表格索引：自动列出所有表格的编号、标题和页码
+    \listoftables
+    % 提示：插图索引和表格索引由 LaTeX 自动生成，无需手动编写。
+    % 只要你在正文中使用了 \caption{} 和 \label{}，就会自动出现在索引中。
+    % 如果论文中没有图片或表格，可以注释掉上面对应的行。
+    \clearpage
+    \mainmatter
+    \thesistitle
+    \input{chapter/chap01.tex}
+    \input{chapter/chap02.tex}
+    \input{chapter/chap03.tex}
+    \input{chapter/chap04.tex}
+    % 如果需要更多章节，取消注释以下行并创建对应文件
+    % \input{chapter/chap05.tex}
+    % \input{chapter/chap06.tex}
+    % 参考文献
+    \printbibliography
+    % 附录（需要时）
+    \input{chapter/apendix.tex}
+    % 致谢（需要时）
+    \input{chapter/thank.tex}
+
+\end{document}
